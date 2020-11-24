@@ -5,17 +5,21 @@ import django
 django.setup()
 
 from fpr_db.models import Student
+from fpr_db.models import Camp
 
+# select * from student
 students = Student.objects.all()
 
-for stud in students:
+for s in students:
     print("Student ID:", student.id, "Student:", student)
 
+# select camp where id = 2
+c = Camp.objects.get(id=2)
+print(c.text)
+print(c.lname)
 
-s = Student.objects.get(id=2)
-print(s.text)
-print(s.lname)
 
-
-## 25:00 II
-camps = t.ent
+# select student where camp = 1
+students = c.student.set_all()
+for s in students:
+    print(student)

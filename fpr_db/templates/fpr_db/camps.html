@@ -1,0 +1,15 @@
+{% extends "fpr_db/base.html" %}
+
+{% block content %}
+
+<p>Camps</p>
+
+<ul>
+    {% for camp in camps %}
+    <li>{% camp %}</li>
+    {% empty %}
+    <li>No topics have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
