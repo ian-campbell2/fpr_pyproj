@@ -13,7 +13,7 @@ class Employee(models.Model):
     lname = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     phone = models.CharField(max_length=14)
-    #camp = models.ForeignKey(Camp, on_delete=models.CASCADE)
+    
 
 class Camp(models.Model):
     name = models.CharField(max_length=40)
