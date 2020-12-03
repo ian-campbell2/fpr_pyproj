@@ -13,6 +13,7 @@ class Parent(models.Model):
     state = models.CharField(max_length=15, null=True)
     zipcode = models.CharField(max_length=5, null=True)
 
+
 class Student(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
@@ -23,6 +24,13 @@ class Student(models.Model):
     state = models.CharField(max_length=15, null=True)
     zipcode = models.CharField(max_length=5, null=True)
 
+class Employee(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    phone = models.CharField(max_length=14)
+
+
 class Camp(models.Model):
     name = models.CharField(max_length=40)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True)
@@ -31,4 +39,8 @@ class Camp(models.Model):
     description = models.CharField(max_length=2000, null=True)
 
 
-
+class Registration(models.Model):
+    transaction_date = models.DateField(auto_now=True, auto_now_add=True)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True)
+    payment_received = models.CharField(max_length=10)   # Y or N
+    notes = models.CharField(max_length=150)
