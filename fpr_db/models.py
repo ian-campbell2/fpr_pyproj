@@ -8,6 +8,7 @@ class Parent(models.Model):
     email = models.CharField(max_length=50)
     phone = models.CharField(max_length=14)
 
+#test
 class Employee(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
