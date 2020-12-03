@@ -1,0 +1,15 @@
+{% extends "fpr_db/base.html" %}
+
+{% block content %}
+
+<p>Parents</p>
+
+<ul>
+    {% for parent in parents %}
+    <li>{{ parent.id }} {{ parent.fname }} {{ parent.lname }} {{ parent.phone }} {{ parent.email }} {{ parent.address }} {{ parent.city }} {{ parent.state }} {{ parent.zip }}</li>
+    {% empty %}
+    <li>No students have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

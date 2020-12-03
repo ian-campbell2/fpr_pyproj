@@ -1,0 +1,15 @@
+{% extends "fpr_db/base.html" %}
+
+{% block content %}
+<p>
+    {{ camp.name }}
+</p>
+<p>
+    Duration: {{ camp.start_date }} to {{ camp.end_date }}
+</p>
+<p>
+    {{ camp.description }}
+</p>
+
+
+{% endblock content %}
