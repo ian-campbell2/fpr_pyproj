@@ -6,9 +6,9 @@
 
 <ul>
     {% for camp in camps %}
-    <li>{% camp %}</li>
+    <li>{{ camp }}</li>
     {% empty %}
-    <li>No topics have been added yet.</li>
+    <li>No camps have been added yet.</li>
     {% endfor %}
 </ul>
 
