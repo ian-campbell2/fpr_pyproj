@@ -16,5 +16,6 @@ views render information onto the template
 2 write the view
 3 write the html template
 when urls searched, they  search for the corresponding view
+ 
 
 '''
