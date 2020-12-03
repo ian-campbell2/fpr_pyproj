@@ -28,3 +28,7 @@ class Student(models.Model):
     phone = models.CharField(max_length=14)
     
 
+class Registration(models.Model):
+    transaction_date = models.DateField(auto_now=True, auto_now_add=True)
+    payment_received = models.CharField(max_length=1)   # Y or N
+    notes = models.CharField(max_length=150)
