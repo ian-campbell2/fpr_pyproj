@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Student
+from .models import Student, CampRegistration
 
 class StudentResForm(forms.ModelForm):
     class Meta:
@@ -9,14 +9,12 @@ class StudentResForm(forms.ModelForm):
         #fields = ['fname', 'lname', 'phone', 'bday','grade','comment']
         
 
-'''
-from .models import #CampRegistration
+
 
 class CampSignUpForm(forms.ModelForm):
     class Meta:
-        model = #CampRegistration
-        fields = ['Fname','Lname','Paid_Or_Unpaid']
-        labels = {'Fname':'Your childs first name','Lname':'Your childs last name','Paid_Or_Unpaid':'Would you like to pay in full or in installments?'}
+        model = CampRegistration
+        fields = ['student','payment_received']
+        labels = {'student':"Enter your child's ID",'payment_received':'Would you like to pay now? (Y or N)'}
 
-#class StudentForm(forms.ModelForm):
-'''
+
