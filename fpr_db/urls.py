@@ -7,5 +7,6 @@ app_name = 'fpr_db'
 
 urlpatterns = [
     path('',views.index, name='index'),
-    path('camps',views.camps, name='camps'),
+    path('camps/',views.camps, name='camps'),
+    path('new_student/', views.new_student, name='new_student'),
 ]

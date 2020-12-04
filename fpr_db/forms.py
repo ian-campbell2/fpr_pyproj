@@ -1,9 +1,9 @@
 from django import forms
-from .models import Parent, Student, Registration
+from .models import Student
 
 class StudentResForm(forms.ModelForm):
     class Meta:
-        Model = Student
-        feilds = ['text']
-        labels = {'text':''}
-        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+        model = Student
+        fields = "__all__"
+        #fields = ['fname', 'lname', 'phone', 'bday','grade','comment']
+        
