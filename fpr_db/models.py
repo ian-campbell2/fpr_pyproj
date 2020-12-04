@@ -30,6 +30,7 @@ class Camp(models.Model):
     start_date = models.DateField(auto_now=False, auto_now_add=False, null=True)
     end_date = models.DateField(auto_now=False, auto_now_add=False, null=True)
     description = models.CharField(max_length=2000, null=True)
+    cost = models.FloatField(default='0.00')
     
 class Student(models.Model):
     #camp = models.ForeignKey(Camp, on_delete=models.CASCADE)

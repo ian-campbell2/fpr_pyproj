@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .forms import StudentResForm
+from .forms import StudentResForm, CampSignUpForm
 
 from .models import Camp, Student, Parent, CampRegistration
 

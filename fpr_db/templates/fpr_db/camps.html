@@ -6,7 +6,7 @@
 
 <ul>
     {% for camp in camps %}
-    <li>{{ camp }}</li>
+    <li><a href="{% url 'fpr_db:camp' camp.id %}">{{ camp.name }}</a></li>
     {% empty %}
     <li>No camps have been added yet.</li>
     {% endfor %}

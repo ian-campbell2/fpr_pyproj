@@ -5,6 +5,9 @@
     {{ camp.name }}
 </p>
 <p>
+    <a href="{% url 'fpr_db:camp_sign_up' camp.id %}">Sign a child up for this camp</a>
+</p>
+<p>
     Duration: {{ camp.start_date }} to {{ camp.end_date }}
 </p>
 <p>
