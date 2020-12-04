@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+    <p>
+        <a href= "{% url 'fpr_db:camp' camp.id %}">{{ camp.name }}</a>
+    </p>
+
+    <p>Sign a child up for this camp.</p>
+
+    <form action= "{% url 'fpr_db:camp_sign_up' camp.id %}" method='post'>
+
+        {% csrf_token %}
+
+
+        {{ form.as_p }}
+
+    <button name="submit">Add child</button>
+    </form>
+{% endblock content %}
