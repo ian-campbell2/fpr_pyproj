@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('fpr_db', '0002_camp'),
+        ('fpr_db', '0003_auto_20201124_2045'),
     ]
 
     operations = [
@@ -29,13 +29,13 @@ class Migration(migrations.Migration):
                 ('notes', models.CharField(max_length=150)),
             ],
         ),
-        migrations.CreateModel(
-            name='Student',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fname', models.CharField(max_length=50)),
-                ('lname', models.CharField(max_length=50)),
-                ('phone', models.CharField(max_length=14)),
-            ],
-        ),
+        #migrations.CreateModel(
+            #name='Student',
+            #fields=[
+                #('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                #('fname', models.CharField(max_length=50)),
+                #('lname', models.CharField(max_length=50)),
+                #('phone', models.CharField(max_length=14)),
+            #],
+        #),
     ]

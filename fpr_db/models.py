@@ -27,8 +27,8 @@ class Employee(models.Model):
 class Camp(models.Model):
     name = models.CharField(max_length=40)
     #student = models.ForeignKey(Student, on_delete=models...)
-    start_date = models.DateField(auto_now=False, auto_now_add=False)
-    end_date = models.DateField(auto_now=False, auto_now_add=False)
+    start_date = models.DateField(auto_now=False, auto_now_add=False, null=True)
+    end_date = models.DateField(auto_now=False, auto_now_add=False, null=True)
     description = models.CharField(max_length=2000, null=True)
     
 class Student(models.Model):
@@ -42,14 +42,14 @@ class Student(models.Model):
     state = models.CharField(max_length=15, null=True)
     zipcode = models.CharField(max_length=5, null=True)
     bday = models.DateField(blank=True, null=True)
-    grade = models.CharField(max_length=2)
-    comment = models.CharField(max_length=150)
+    grade = models.CharField(max_length=2, default='n/a')
+    comment = models.CharField(max_length=150, default='n/a')
 
 class CampRegistration(models.Model):
     transaction_date = models.DateField(auto_now=True, auto_now_add=False)
     payment_received = models.CharField(max_length=1)   # Y or N
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True)
-    camp = models.ForeignKey(Camp, on_delete=models.CASCADE)
-    notes = models.CharField(max_length=150)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE,null=True)
+    camp = models.ForeignKey(Camp, on_delete=models.CASCADE,null=True)
+    notes = models.CharField(max_length=150, default='n/a')
 
 
