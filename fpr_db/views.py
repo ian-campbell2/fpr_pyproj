@@ -1,7 +1,11 @@
-from django.shortcuts import render
-from .models import Camp, Student, Parent
-#from .forms import CampSignUpForm
-#from .models import CampRegistration
+from django.shortcuts import render, redirect
+
+from .forms import StudentResForm
+
+from .models import Camp, Student, Parent, CampRegistration
+
+from .models import 
+
 
 # Create your views here.
 
@@ -15,6 +19,20 @@ def camps(request):
     context = {'camps':camps}
 
     return render(request, 'fpr_db/camps.html', context)
+
+
+def new_student(request):
+    if request.method != 'POST':
+        form = StudentResForm()
+    else:
+        form = StudentResForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('fpr_db:base')
+
+    context = {'form':form}
+
+    return render(request, 'fpr_db/new_student.html', context)
 
 def camp(request, camp_id):
     camp = Camp.objects.get(id=camp_id)
@@ -52,3 +70,4 @@ def new_camp_sign_up(request, camp_id):
 
     context = {'form':form}
     return redirect(request, 'fpr_db/camp_sign_up.html', context)
+
