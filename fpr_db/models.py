@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 #grade choices for the parent to select from on the new_student form
 grade_choices = ['1','2','3','4','5','6','7','8','9','10','11','12']
@@ -45,6 +47,8 @@ class Student(models.Model):
     bday = models.DateField(blank=True, null=True)
     grade = models.CharField(max_length=2, default='n/a')
     comment = models.CharField(max_length=150, default='n/a')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,default=2)
+
 
 class CampRegistration(models.Model):
     transaction_date = models.DateField(auto_now=True, auto_now_add=False)
