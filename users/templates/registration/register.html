@@ -3,7 +3,7 @@
 <!-- {% block title %} Registration {% endblock title %} -->
 
 {% block content %}
-<form action="{% url 'fpr_db:register' %}" method ='post'>
+<form action="{% url 'users:register' %}" method ='post'>
     {% csrf_token %}
     {{form.as_p}}
 
