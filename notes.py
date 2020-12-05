@@ -19,5 +19,5 @@ when urls searched, they  search for the corresponding view
  
 
 python3 manage.py createsuperuser
-admin login: admin_fpr, adminpw
+admin login: adminfpr, adminpw
 '''

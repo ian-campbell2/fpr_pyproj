@@ -10,8 +10,8 @@ from fpr_db.models import Camp
 # select * from student
 students = Student.objects.all()
 
-for s in students:
-    print("Student ID:", student.id, "Student:", student)
+#for s in students:
+#   print("Student ID:", student.id, "Student:", student)
 
 ## select camp where id = 2
 #c = Camp.objects.get(id=2)
@@ -28,3 +28,8 @@ for s in students:
 camps = Camp.objects.all()
 for c in camps:
     print(c.id)
+
+from django.contrib.auth.models import User
+
+for user in User.objects.all():
+    print(user.username, user.id)
