@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Student, CampRegistration
+from .models import Student, CampRegistration, Parent
 
 class StudentResForm(forms.ModelForm):
     class Meta:
@@ -16,5 +16,4 @@ class CampSignUpForm(forms.ModelForm):
         model = CampRegistration
         fields = ['student','payment_received']
         labels = {'student':"Enter your child's ID",'payment_received':'Would you like to pay now? (Y or N)'}
-
 
