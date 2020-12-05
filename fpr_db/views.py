@@ -55,7 +55,7 @@ def parents(request):
 
     return render(request, 'fpr_db/parents.html', context)
 
-def new_camp_sign_up(request, camp_id):
+def camp_sign_up(request, camp_id):
     camp = Camp.objects.get(id=camp_id)
     if request.method != 'POST':
 
@@ -65,9 +65,12 @@ def new_camp_sign_up(request, camp_id):
         form = CampSignUpForm(data=request.POST)
 
         if form.is_valid():
+            camp_sign_up = form.save(commit=False)
+            camp_sign_up.camp = camp
+            camp_sign_up.save()
             form.save()
-            return redirect('fpr_db:camp')
+            return redirect('fpr_db:camp', camp_id=camp_id)
 
-    context = {'form':form}
+    context = {'form':form, 'camp':camp}
     return redirect(request, 'fpr_db/camp_sign_up.html', context)
 

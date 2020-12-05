@@ -12,5 +12,5 @@ urlpatterns = [
     path('camp/<int:camp_id>/', views.camp, name='camp'),
     path('students',views.students, name='students'),
     path('parents',views.parents, name='parents'),
-    path('camp_sign_up/<int:camp_id>/', views.new_camp_sign_up, name='camp_sign_up'),
+    path('camp_sign_up/<int:camp_id>/', views.camp_sign_up, name='camp_sign_up'),
 ]
