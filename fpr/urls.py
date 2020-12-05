@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # '' = home page. fpr_db.urls = all the urls in the app
     path('',include('fpr_db.urls')),
+    path('user/', include('users.urls')),
 ]

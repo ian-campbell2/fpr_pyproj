@@ -4,6 +4,12 @@
     <a href="{% url 'fpr_db:camps' %}">Camps</a>
     <a href="{% url 'fpr_db:parents' %}">Parents</a>
     <a href="{% url 'fpr_db:students' %}">Students</a>
+    {% if user.is_authenticated %}
+    Hello, {{user.username}}
+    <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+    <a href="{% url 'users:login' %}"></a>
+    {% endif %}
 </p>
 
 {% block content %} {% endblock content %}
